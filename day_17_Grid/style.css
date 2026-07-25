@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Courier New', Courier, monospace;
+    background: #111;
+    color:white;
+
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: #000;
+    gap: 30px;
+
+}
+
+.logo{
+    font-size: 30px;
+    color: #e50914;
+    letter-spacing: 2px;
+
+}
+
+.nav-links{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style:none;
+
+}
+
+.nav-links a{
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+
+}
+
+.nav-links a:hover{
+    color: #e50914;
+}
+
+.login-btn{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #e50914;
+    color: white;
+    cursor: pointer;
+}
+
+.hero{
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    padding: 60px 7%;
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.9),
+        rgba(0,0,0,0.2)
+    ),
+    url(images/hero.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+.hero-content{
+    max-width: 600px;
+
+}
+
+.hero-content h1{
+    font-size: 55px;
+    margin-bottom: 20px;
+
+}
+
+.hero-content p{
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+
+}
+
+.hero-buttons{
+    display: flex;
+    gap: 15px;
+
+}
+
+.hero-buttons button{
+    pad: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.play-btn {
+    background: white;                  /* Makes primary button white */
+    color: black;                       /* Makes its text black */
+}
+
+.info-btn {
+    background: rgba(100, 100, 100, .8); /* Gives secondary button transparent gray */
+    color: white;                         /* Makes text white */
+}
+
+.movies {
+    padding: 40px 5%;                   /* Adds space around each movie section */
+}
+
+
+.movies h2 {
+    margin-bottom: 25px;                /* Creates space between heading and cards */
+}
+
+
+/* THIS IS THE IMPORTANT GRID PART */
+
+.movie-grid {
+    display: grid;                      /* Turns movie list into CSS Grid */
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px, 1fr)
+        );                              /* Automatically creates responsive columns */
+
+    gap: 20px;                          /* Creates spacing between cards */
+}
+
+.movie-card {
+    background: #1f1f1f;                /* Gives each movie card dark background */
+    border-radius: 8px;                 /* Rounds card corners */
+    overflow: hidden;                   /* Prevents image escaping rounded corners */
+    transition: 0.3s;                   /* Makes hover animation smooth */
+}
+
+
+.movie-card:hover {
+    transform: scale(1.05);              /* Enlarges card slightly on hover */
+}
+
+
+.movie-card img {
+    width: 100%;                         /* Makes image fill card width */
+    height: 260px;                       /* Gives every movie image equal height */
+    object-fit: cover;                   /* Crops image instead of stretching it */
+    display: block;                      /* Removes small inline-image gap */
+}
+
+
+.movie-card h3 {
+    padding: 15px;                       /* Adds space around movie title */
+}
+
+
+footer {
+    text-align: center;                  /* Centers footer text */
+    padding: 30px;                       /* Adds space inside footer */
+    background: #000;                    /* Makes footer black */
+    color: #aaa;                         /* Gives footer muted text */
+}
+
+
+/* =========================
+   RESPONSIVE NAVBAR
+   ========================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-direction: column;          /* Stacks navbar items vertically */
+    }
+
+    .nav-links {
+        flex-wrap: wrap;                 /* Allows navigation links to move to next row */
+        justify-content: center;         /* Centers wrapped navigation links */
+    }
+
+    .hero-content h1 {
+        font-size: 38px;                 /* Makes hero heading smaller on phones */
+    }
+
+}
